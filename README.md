@@ -69,7 +69,24 @@ layout/theme.liquid
     </li>
     </a>
   {% endfor %}
+```
+> templates/product.liquid
+```liquid
+<img src="{{ product.featured_image | image_url }}" height="300px" width="300px">
+<h1>{{ product.title }}</h1>
+<h1>{{ product.price | money }}</h1>
+<p>{{ product.description }}</p>
 
+{% form 'product', product %}
+  <select name="id">
+    {% for variant in product.variants %}
+      <option value="{{ variant.id }}">{{ variant.title }}</option>
+    {% endfor %}
+  </select>
+
+  <button type="submit">Add to cart</button>
+{% endform %}
+```
 
 
 
