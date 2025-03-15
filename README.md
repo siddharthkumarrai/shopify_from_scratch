@@ -51,6 +51,24 @@ layout/theme.liquid
       {{ content_for_layout }}
   </body>
 ```
+> templates/index.liquid
+```liquid
+  <h1 class="text-center font-bold text-rose-400 my-16">{{ collections.frontpage.title }}</h1>
+  {% for product in collections.frontpage.products %}
+     <a href="{{ product.url }}">
+    <li>
+        <img
+          src="{{ product.featured_image | image_url }}"
+          alt="{{ product.title }}"
+          width="200"
+          height="200"
+        >
+        <h1>{{ product.title | link_to: product.url }}</h1>
+        <h4>{{ product.description }}</h4>
+        <h1>{{ product.price | money }}</h1>
+    </li>
+    </a>
+  {% endfor %}
 
 
 
