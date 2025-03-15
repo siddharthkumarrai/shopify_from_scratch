@@ -34,7 +34,7 @@ layout/theme.liquid
 </html>
 ```
 > templates/index.liquid
-```
+```liquid
 <h1> hello i am siddharth kumar rai </h1>
 ```
 > snippets/header.liquid
