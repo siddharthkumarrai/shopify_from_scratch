@@ -18,7 +18,8 @@ mkdir assets, config, layout, locales, sections, snippets, templates
 
 > layout/theme.liquid
 ```liquid
-- layout/theme.liquid
+layout/theme.liquid
+
 <!doctype html>
 <html>
   <head>
