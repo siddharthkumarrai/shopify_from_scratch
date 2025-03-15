@@ -87,6 +87,35 @@ layout/theme.liquid
   <button type="submit">Add to cart</button>
 {% endform %}
 ```
+> templates/cart.liquid
+```liquid
+{% form 'cart', cart %}
+  <h1>Cart</h1>
+  {% if cart.empty? %}
+    <p>Cart is empty.</p>
+  {% else %}
+    {% for item in cart.items %}
+      <div>
+        <img src="{{ item.image | image_url: width:250  }}" height="300px" width="300px">
+        <h2>{{ item.title }}</h2>
+        <h1>{{ item.final_line_price | money }}</h1>
+        <input name="updates[]" , value="{{ item.quantity }}">
+        <a href="{{ item.url_to_remove }}">Remove</a>
+      </div>
+    {% endfor %}
+    <button type="submit" name="update">
+      updates
+    </button>
+
+    <br>
+    <hr>
+    <h3>Total Price : {{ cart.total_price | money }}</h3>
+    <button type="submit" name="checkout">
+      checkout
+    </button>
+  {% endif %}
+{% endform %}
+```
 
 
 
