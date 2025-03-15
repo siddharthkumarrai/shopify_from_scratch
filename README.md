@@ -12,7 +12,9 @@ mkdir assets, config, layout, locales, sections, snippets, templates
 - snippets
 - templates
 > layout/theme.liquid
+
 > assets/style.css.liquid
+
 > assets/scripts.js.liquid
 ```liquid
 <!doctype html>
